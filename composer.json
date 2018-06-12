@@ -1,0 +1,27 @@
+{
+  "name": "tochka-developers/jsonrpc-smd-converter",
+  "description": "Convert jsonRPC smd schema to other formats",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dmitriy Barakovskikh",
+      "email": "hatsune333@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tochka\\JsonRpcSmdConverter\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers":[
+        "Tochka\\JsonRpcSmdConverter\\JsonRpcConverterServiceProvider"
+      ]
+    }
+  }
+}
