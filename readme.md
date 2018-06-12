@@ -19,9 +19,9 @@ bootstrap
 ```php
 $app->register(Tochka\JsonRpcSmdConverter\ServiceProvider::class);
 ```
-###Laravel >=5.5
+### Laravel >=5.5
 Провайдер регистрируется атомаматически
-###laravel <=5.4
+### laravel <=5.4
 Зарегистировать пройвадера в configs/app.php
 
 ### Конфигурация
