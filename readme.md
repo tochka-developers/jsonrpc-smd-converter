@@ -1,5 +1,5 @@
 # SDM ковертер
-Конвертер SMD схему в рзаные форматы
+Конвертирует jsonRPC SMD схему в рзаные форматы
 
 #### Поддерживаемы форматы
 - postman
@@ -13,8 +13,8 @@ php artisan jsonrpc:convert {source} {format}
 - если не указать будет выбор из доступных вариантов
 - если source или format всего один то можно не их можно не указывать
 
-##Установка
-###lumen 
+## Установка
+### lumen 
 bootstrap
 ```php
 $app->register(Tochka\JsonRpcSmdConverter\ServiceProvider::class);
