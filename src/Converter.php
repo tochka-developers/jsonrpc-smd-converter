@@ -12,6 +12,7 @@ class Converter
      * @param string $format
      *
      * @throws \Throwable
+     * @throws GuzzleException
      */
     public static function make(string $source, string $format): void
     {
@@ -19,16 +20,16 @@ class Converter
         throw_if(empty($config), new \InvalidArgumentException('not find config for ' . $source));
         throw_if(!in_array(IFormat::class, class_implements($format)), new \RuntimeException('Bad generator'));
 
-        $loader = new Loader();
-        try {
-            $schema = $loader->load($config['url']);
-        } catch (GuzzleException $e) {
-            throw new \RuntimeException('schema loading error', $e);
+        if ($config['path']) {
+            $schema = Loader::loadFromPath($config['path']);
+        } else {
+            $schema = Loader::loadFromUrl($config['url']);
         }
+
         $config['source_name'] = $source;
         /** @var IFormat $generator */
         $generator = new $format($schema, $config);
-        $loader->save($config['output_file'], $generator->make());
+        Loader::save($config['output_file'], $generator->make());
 
     }
 }

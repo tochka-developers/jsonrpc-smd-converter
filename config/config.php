@@ -4,8 +4,10 @@ return [
     'sources' => [
         // source name
         'oc' => [
-            // адресс апи
-            'url'                 => 'http://example.com/api/v1/public/jsonrpc',
+            // api url
+            'url'                 => 'http://example.com/api/v1/public/jsonrpcc',
+            // путь к локальной smd схеме если null, схема будет скачиваться с url
+            'path'                => 'public/smd.json',
             // файл с результатом относительно корня
             'output_file'         => 'public/example.json',
             // имя переменной которой будет заменён url (http://example.com)
