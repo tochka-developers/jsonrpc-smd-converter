@@ -158,7 +158,7 @@ class Postman implements IFormat
             if(!empty($p['parameters'])) {
                 $paramsRes[$p['name']] = $this->makeRequestParams($p['parameters']);
             }else {
-                $paramsRes[$p['name']] = $p['example'] ?? $p['types'][0];
+                $paramsRes[$p['name']] = $p['example'] ?? $p['types'][0] ?? '';
             }
         }
 
